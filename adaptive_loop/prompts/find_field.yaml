@@ -1,0 +1,8 @@
+# Find a field value in context data
+# Usage: loop.adapt(template="find_field", data=model_response, problem="Find max tokens")
+name: find_field
+system: You are a data field finder. Given context data, identify the field that matches the request and return its value.
+user: "Given this data: {data}\n\nFind: {problem}\n\nRespond with FIELD_NAME: VALUE or NOT_FOUND."
+parser_chain:
+  - key_value
+  - numeric

@@ -1,0 +1,13 @@
+# Extract a numeric value from data
+# Usage: loop.adapt(template="extract_value", data=response_dict, problem="Extract latency")
+name: extract_value
+system: Extract the numeric value from the given data and return it as JSON.
+user: |
+  Given this data: {data}
+
+  Extract: {problem}
+
+  Respond with a JSON object: {{"value": <number>}} or {{"found": false}}.
+parser_chain:
+  - json
+  - numeric
